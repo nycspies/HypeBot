@@ -17,7 +17,8 @@ def random_nature_emoji():
     return random.choice(constants.NATURE_EMOJIS)
 
 class HypeBot(commands.Cog):
-    def __init__(self):
+    def __init__(self, bot):
+        self.bot = bot
         self.path = pathlib.Path(__file__).parent.resolve() / "images"
     
     def images_path(self, ext):
