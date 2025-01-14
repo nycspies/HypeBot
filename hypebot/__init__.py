@@ -1,13 +1,4 @@
-from redbot.core import commands
+from .handlers import HypeBot
 
-class HypeBot(commands.Cog):
-    def __init__(self, bot):
-        self.bot = bot
-
-    @commands.command()
-    async def hype(self, ctx):
-        await ctx.send("Let's get hyped!")
-
-async def setup(bot):
-    cog = HypeBot(bot)
-    await bot.add_cog(cog)  # Make sure this is awaited!
+def setup(bot):
+    bot.add_cog(HypeBot())
